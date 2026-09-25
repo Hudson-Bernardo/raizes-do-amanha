@@ -56,3 +56,5 @@ await writeFile('documentacao/BUILD-METRICAS.json', JSON.stringify({
 },null,2)+'\n');
 console.table(medidas);
 console.log('Build pronta em dist/. Entrada: dist/html/index.html');
+// Entrada pública na raiz, mantendo os caminhos relativos da aplicação em html/.
+await writeFile('dist/index.html', '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=./html/index.html"><title>Raízes do Amanhã</title></head><body><p><a href="./html/index.html">Acessar Raízes do Amanhã</a></p></body></html>');
