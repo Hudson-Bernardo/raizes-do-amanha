@@ -1,0 +1,29 @@
+{
+  "metodo": "Bytes em disco, sem gzip/Brotli; antes: fontes HTML/CSS/JS; depois: saída agrupada e minificada. Imagens excluídas.",
+  "medidas": [
+    {
+      "tipo": "HTML",
+      "antes": 3466,
+      "depois": 2984,
+      "reducaoPercentual": 13.91
+    },
+    {
+      "tipo": "CSS",
+      "antes": 13273,
+      "depois": 10692,
+      "reducaoPercentual": 19.45
+    },
+    {
+      "tipo": "JavaScript",
+      "antes": 30879,
+      "depois": 22069,
+      "reducaoPercentual": 28.53
+    },
+    {
+      "tipo": "Total HTML/CSS/JS",
+      "antes": 47618,
+      "depois": 35745,
+      "reducaoPercentual": 24.93
+    }
+  ]
+}

@@ -210,11 +210,26 @@ A primeira release está planejada como `v1.0.0`. As versões seguirão MAJOR.MI
 
 ## Build e publicação
 
-Atualmente, o projeto é estático e **não possui etapa de build, bundler ou comando npm run build**. O navegador utiliza diretamente HTML, CSS e módulos JavaScript.
+A build usa **esbuild 0.28.2** para agrupar e minificar JavaScript/CSS e **html-minifier-terser 7.2.0** para minificar o documento HTML. A configuração está em `scripts/build.mjs`; as versões exatas e o `package-lock.json` tornam a instalação reproduzível. Requer Node.js 20 ou superior e NPM.
 
-O conjunto necessário para servir o site é formado pelas pastas `html`, `css`, `js` e `imagens`. O ponto de entrada é `html/index.html`, e os caminhos relativos dependem da preservação dessa estrutura.
+No PowerShell do Windows, execute na raiz do projeto:
 
-Não há endereço de produção configurado nesta documentação. A otimização adicional, a configuração da hospedagem e a publicação serão realizadas na etapa de entrega. As imagens já possuem alternativas WebP/JPEG e os cartões utilizam carregamento tardio.
+```powershell
+npm.cmd ci
+npm.cmd test
+npm.cmd run build
+py -3 -m http.server 8001 --bind 127.0.0.1 --directory dist
+```
+
+Abra **http://127.0.0.1:8001/html/index.html**. O uso de `npm.cmd` evita a seleção do script npm.ps1 quando a política do PowerShell bloqueia esse arquivo. Em outros sistemas, use `npm` e `python3`.
+
+A saída é `dist/html/index.html`, `dist/css/app.css`, `dist/js/main.js` e `dist/imagens/`. Os fontes não são minificados no lugar. Cada build recria apenas `dist/`; não edite essa pasta manualmente. `dist/` e `node_modules/` são ignoradas pelo Git. As imagens são copiadas sem recompressão, preservando os caminhos usados nos templates.
+
+A execução gera `documentacao/BUILD-METRICAS.json`, com bytes antes/depois e percentuais. Nesta medição, o conjunto HTML/CSS/JS passou de 47.258 para 35.745 bytes, redução de 24,36%. O resultado inclui agrupamento e minificação; não inclui imagens nem gzip/Brotli. Quebras de linha diferentes entre sistemas podem alterar ligeiramente os valores.
+
+Para testar a build com as suítes de navegador existentes, sirva `dist` na porta **8000**, sem outro servidor nessa porta, e execute `node testes/navegador.cjs` e `node testes/contraste.cjs` em outro terminal com Playwright/Chromium disponíveis. Os testes usam dados fictícios e geram capturas. A instalação opcional de Playwright segue a seção Testes.
+
+Não há endereço público de produção configurado. A hospedagem permanece pendente. O relatório desta etapa está em `documentacao/BUILD.md`.
 
 ## Próximas etapas
 

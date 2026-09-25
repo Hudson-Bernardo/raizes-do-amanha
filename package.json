@@ -2,6 +2,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test testes/validacao.test.js testes/armazenamento.test.js testes/projetos.test.js"
+    "test": "node --test testes/validacao.test.js testes/armazenamento.test.js testes/projetos.test.js",
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "html-minifier-terser": "7.2.0"
   }
 }
