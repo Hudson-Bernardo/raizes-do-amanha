@@ -1,3 +1,5 @@
+import { renderizarCartoes } from './projetos.js';
+
 // Templates contêm somente HTML local. String.raw preserva as barras das expressões pattern.
 // Dados digitados são apresentados com value/textContent, nunca interpolados como HTML.
 const inicio = String.raw`<section class="hero" aria-labelledby="titulo-inicio">
@@ -31,22 +33,7 @@ const inicio = String.raw`<section class="hero" aria-labelledby="titulo-inicio">
 
 const projetos = String.raw`<section class="abertura" aria-labelledby="titulo-projetos"><p class="sobretitulo">Onde a mudança acontece</p><h1 id="titulo-projetos">Três iniciativas.<br><em>Um propósito em comum.</em></h1><p class="introducao">Conheça as propostas da ONG e encontre uma forma de contribuir.</p></section>
     <!-- article torna cada iniciativa uma unidade de conteúdo compreensível por si só. -->
-    <div class="grade tres projetos"><article class="cartao projeto"><!-- Imagem ilustrativa gerada por IA para a ONG fictícia. -->
-      <figure><picture>
-        <!-- WebP é a opção principal; JPEG funciona como alternativa. -->
-        <source srcset="../imagens/educacao.webp" type="image/webp">
-        <img src="../imagens/educacao.jpg" alt="Uma voluntária acompanha duas crianças em uma atividade com livro e caderno." width="1536" height="1024" loading="lazy">
-      </picture><figcaption>Imagem para o projeto Aprender para crescer</figcaption></figure><div class="miolo"><p class="badge">Educação</p><h2>Aprender para crescer</h2><p>Oficinas de leitura, reforço escolar e introdução à tecnologia para ampliar possibilidades de aprendizagem.</p><h3>Como colaborar</h3><p>Apoiar atividades educativas, organizar materiais e compartilhar conhecimentos.</p><a class="link" href="#/cadastro?projeto=educacao">Quero participar <span aria-hidden="true">↗</span></a></div></article><article class="cartao projeto"><!-- Imagem ilustrativa gerada por IA para a ONG fictícia. -->
-      <figure><picture>
-        <!-- WebP é a opção principal; JPEG funciona como alternativa. -->
-        <source srcset="../imagens/alimentacao.webp" type="image/webp">
-        <img src="../imagens/alimentacao.jpg" alt="Três voluntários organizam verduras e pacotes de alimentos em caixas." width="1536" height="1024" loading="lazy">
-      </picture><figcaption>Imagem para o projeto Mesa compartilhada</figcaption></figure><div class="miolo"><p class="badge">Segurança alimentar</p><h2>Mesa compartilhada</h2><p>Campanhas de arrecadação e organização de alimentos para fortalecer o apoio a famílias da comunidade.</p><h3>Como colaborar</h3><p>Organizar doações, separar alimentos e ajudar na preparação das ações.</p><a class="link" href="#/cadastro?projeto=alimentacao">Quero participar <span aria-hidden="true">↗</span></a></div></article><article class="cartao projeto"><!-- Imagem ilustrativa gerada por IA para a ONG fictícia. -->
-      <figure><picture>
-        <!-- WebP é a opção principal; JPEG funciona como alternativa. -->
-        <source srcset="../imagens/comunidade.webp" type="image/webp">
-        <img src="../imagens/comunidade.jpg" alt="Três pessoas plantam mudas e regam um canteiro em uma horta comunitária." width="1536" height="1024" loading="lazy">
-      </picture><figcaption>Imagem para o projeto Bairro que floresce</figcaption></figure><div class="miolo"><p class="badge">Cuidado coletivo</p><h2>Bairro que floresce</h2><p>Mutirões de cuidado com espaços de convivência e oficinas de educação ambiental.</p><h3>Como colaborar</h3><p>Participar dos mutirões, cuidar de hortas e incentivar práticas sustentáveis.</p><a class="link" href="#/cadastro?projeto=comunidade">Quero participar <span aria-hidden="true">↗</span></a></div></article></div><aside class="nota"><h2>Participação que respeita seu ritmo</h2><p>Escolha uma área de interesse no cadastro e indique sua disponibilidade. As iniciativas apresentadas são exemplos acadêmicos.</p></aside>
+    <div class="grade tres projetos">${renderizarCartoes()}</div><aside class="nota"><h2>Participação que respeita seu ritmo</h2><p>Escolha uma área de interesse no cadastro e indique sua disponibilidade. As iniciativas apresentadas são exemplos acadêmicos.</p></aside>
   `;
 
 const cadastro = String.raw`<section class="abertura" aria-labelledby="titulo-cadastro"><p class="sobretitulo">Vamos construir juntos</p><h1 id="titulo-cadastro">Seu primeiro passo<br><em>para fazer parte.</em></h1><p class="introducao">Conte como você gostaria de contribuir.</p></section>
