@@ -168,6 +168,14 @@ O script verifica navegação, formulário, armazenamento, diálogo e diferentes
 
 Os relatórios existentes em `documentacao/` registram execuções anteriores; não representam automaticamente uma nova execução após cada alteração. A atualização dos cartões foi verificada por testes unitários e comparação estrutural do HTML, sem uma nova execução completa de navegador nessa alteração.
 
+## Alto contraste
+
+O botão **Alto contraste** no cabeçalho alterna entre a paleta original e uma paleta preta com textos brancos, ações amarelas e foco ciano. Seu estado é comunicado por `aria-pressed`. Pode ser operado com Tab, Enter e Espaço.
+
+O módulo `js/modules/contraste.js` aplica `data-contraste` ao elemento `html`. A preferência é persistida na chave `raizes-amanha:contraste:v1`, separada do cadastro. Se o armazenamento estiver indisponível, o botão continua funcionando durante a sessão. A escolha é preservada nas rotas e sincronizada entre abas por `storage`.
+
+Não há um tema escuro independente: a alternativa implementada é o alto contraste. Os resultados e limites da verificação estão em `documentacao/CONTRASTE.md`.
+
 ## Acessibilidade e responsividade
 
 Recursos implementados incluem HTML semântico, textos alternativos, rótulos associados aos campos, link para pular ao conteúdo, foco visível, mensagens associadas por aria-describedby, indicação de erros com aria-invalid e estados do menu com aria-expanded.
