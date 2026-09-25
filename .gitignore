@@ -1,0 +1,22 @@
+# Dependências instaladas localmente
+node_modules/
+
+# Arquivos de configuração privados
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários e registros de execução
+*.log
+__pycache__/
+*.pyc
+
+# Arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Relatórios temporários de testes
+playwright-report/
+test-results/
+# Arquivos gerados pela build de produção
+dist/
