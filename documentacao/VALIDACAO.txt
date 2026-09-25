@@ -1,0 +1,37 @@
+VALIDAÇÃO DA SPA — 19/09/2026
+
+1. HTML: Nu Html Checker executado LOCALMENTE, versão 26.9.16.
+Foram verificados o documento de entrada e três documentos montados a partir
+dos templates reais de início, projetos e cadastro. Resultado: messages: [].
+O arquivo validacao-html-local.json registra esse resultado.
+
+A submissão externa ao serviço do W3C foi bloqueada pela revisão automática
+por envolver envio do código a um destino externo. A verificação foi feita
+localmente; não declarar que esta versão foi aprovada pelo serviço online.
+
+Correções durante o desenvolvimento:
+- Remoção de fechamentos </source> indevidos na conversão dos templates.
+- Inclusão de h1 no conteúdo inicial de carregamento do documento de entrada.
+- Uso de String.raw nos templates para preservar as barras das expressões
+  regulares pattern. O teste real de telefone identificou essa necessidade.
+- Verificação de foco do submenu após a transferência de foco, permitindo
+  clicar em seus links sem que ele desapareça antes da ativação.
+
+2. Unidade: cinco testes aprovados com Node.
+Cobrem CPF, máscaras, persistência seletiva, exclusão isolada, JSON inválido,
+versão desconhecida e falhas de leitura/gravação/exclusão.
+
+3. Navegador: Chromium 153, controlado por Playwright.
+Navegação sem recarga; voltar/avançar; seleção de projeto; erro do CPF;
+submissão válida; persistência após recarga; recuperação; cancelamento e
+confirmação de exclusão; registro corrompido; rota inexistente; imagens;
+menu móvel e Escape; ausência de erros JavaScript.
+
+Layout verificado nas três telas nas larguras 360, 479, 480, 639, 640, 767,
+768, 1023, 1024, 1279, 1280 e 1440 pixels, sem rolagem horizontal.
+As seis imagens em capturas/ são screenshots reais desse navegador.
+
+4. Limitações
+Não foi realizada certificação WCAG nem teste com leitor de tela.
+Não foram testados Firefox, Safari ou dispositivos físicos.
+O servidor é apenas estático; dados demonstrativos permanecem no navegador.

@@ -1,0 +1,1 @@
+APROVADO: navegação sem recarga; voltar/avançar; seleção do projeto; erro e máscara do CPF; envio válido; persistência após recarga; recuperação parcial; modal com Escape e confirmação; exclusão; JSON corrompido; rota inexistente; imagens; 36 verificações de largura; menu mobile; ausência de erros JavaScript.

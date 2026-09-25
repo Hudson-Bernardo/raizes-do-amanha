@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raízes do Amanhã: ONG fictícia e projeto acadêmico de participação comunitária.">
+  <title>Início | Raízes do Amanhã</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <!-- Módulos ES separam navegação, conteúdo, validação e persistência. -->
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho"><div class="container barra">
+    <a class="marca" href="#/inicio"><span class="simbolo" aria-hidden="true">r.</span> Raízes do Amanhã</a>
+    <button class="menu-toggle" type="button" aria-controls="navegacao" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+    <nav id="navegacao" aria-label="Navegação principal">
+      <a href="#/inicio" data-rota="inicio">Início</a>
+      <div class="dropdown">
+        <button type="button" id="botao-projetos" class="nav-button" aria-expanded="false" aria-controls="submenu">Projetos <span aria-hidden="true">▾</span></button>
+        <ul id="submenu" hidden>
+          <li><a href="#/projetos" data-rota="projetos">Todas as iniciativas</a></li>
+          <li><a href="#/cadastro?projeto=educacao">Participar de educação</a></li>
+          <li><a href="#/cadastro?projeto=alimentacao">Participar de alimentação</a></li>
+          <li><a href="#/cadastro?projeto=comunidade">Participar da horta</a></li>
+        </ul>
+      </div>
+      <a href="#/cadastro" data-rota="cadastro">Quero participar</a>
+    </nav>
+  </div></header>
+  <!-- Este contêiner permanece; somente seus filhos mudam a cada rota. -->
+  <main id="conteudo" class="container" tabindex="-1"><h1>Raízes do Amanhã</h1><p class="alerta">Carregando a aplicação. Se esta mensagem permanecer, execute iniciar.py e acesse o endereço HTTP informado. Módulos JavaScript não devem ser abertos por file://.</p></main>
+  <noscript><p class="container alerta">Ative o JavaScript para usar a navegação e o cadastro desta aplicação.</p></noscript>
+  <footer class="rodape"><div class="container"><strong>Raízes do Amanhã</strong><p>Cuidado que aproxima. Oportunidades que transformam.</p><small>ONG fictícia • Dados de demonstração salvos apenas neste navegador</small></div></footer>
+  <div id="notificacao" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden><span id="texto-toast"></span><button type="button" aria-label="Fechar notificação">×</button></div>
+  <!-- dialog oferece comportamento modal nativo, com foco contido e tecla Escape. -->
+  <dialog id="confirmacao" aria-labelledby="titulo-modal" aria-describedby="texto-modal"><h2 id="titulo-modal">Excluir registro local?</h2><p id="texto-modal">Esta ação remove o registro salvo por este projeto neste navegador. Os dados de outros sites são preservados.</p><form method="dialog"><div class="acoes"><button class="botao secundario" value="cancelar" autofocus>Cancelar</button><button class="botao" value="confirmar">Excluir registro</button></div></form></dialog>
+</body>
+</html>

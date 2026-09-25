@@ -1,0 +1,13 @@
+✔ Persiste apenas campos permitidos e exclui sem afetar outras chaves (1.812236ms)
+✔ Dados corrompidos e versões desconhecidas produzem erro recuperável (0.404823ms)
+✔ Bloqueio e falta de espaço não produzem confirmação falsa (0.30854ms)
+✔ CPF: aceita verificadores corretos e rejeita alteração, repetição e tamanho incompleto (1.426999ms)
+✔ Máscaras preservam zeros, limitam tamanho e aceitam colagem formatada (0.519092ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 295.742545

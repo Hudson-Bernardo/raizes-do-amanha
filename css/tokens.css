@@ -1,0 +1,16 @@
+/* Tokens: cores semânticas, sete níveis tipográficos e espaçamento em múltiplos de 4px. */
+:root {
+  --fundo: #f8f7f1; --papel: #ffffff; --texto: #233b31; --verde: #285442;
+  --muted: #56665c; --linha: #d6ded3; --destaque: #dfedba; --erro: #a02424;
+  --hover: #173c2e; --foco: #866010; --sucesso: #e9f2df; --erro-fundo: #fff0ee;
+  --rodape: #203f32; --borda-controle: #879b8c;
+  --fonte-corpo: Arial, sans-serif; --fonte-titulo: Georgia, serif;
+  --texto-xs: .75rem; --texto-sm: .875rem; --texto-md: 1rem;
+  --texto-lg: 1.125rem; --texto-xl: 1.5rem;
+  --titulo-2: clamp(1.75rem, 3vw, 2.75rem);
+  --titulo-1: clamp(2.25rem, 4.5vw, 4.25rem);
+  --esp-1: .25rem; --esp-2: .5rem; --esp-3: .75rem; --esp-4: 1rem;
+  --esp-5: 1.25rem; --esp-6: 1.5rem; --esp-8: 2rem; --esp-10: 2.5rem;
+  --esp-12: 3rem; --esp-16: 4rem; --esp-20: 5rem;
+  --raio: .75rem; --rapida: 160ms; --sombra: 0 8px 24px rgb(35 59 49 / 14%);
+}

@@ -1,0 +1,13 @@
+O projeto Raízes do Amanhã foi reorganizado com pastas distintas para HTML, CSS, imagens e JavaScript, separando estrutura, apresentação, recursos visuais e comportamento.
+
+/html: contém index.html, documento principal da SPA. Ele define o cabeçalho, a navegação, o contêiner <main>, o rodapé e os elementos persistentes de notificação e confirmação. As telas de início, projetos e cadastro são inseridas no <main> por JavaScript, sem carregar outro documento.
+
+/css: contém tokens.css, com variáveis de cores, tipografia e espaçamento, e estilos.css, com estilos dos componentes, grade de 12 colunas e regras responsivas.
+
+/imagens: reúne capa, educacao, alimentacao e comunidade, cada uma em JPEG e WebP. Os templates usam caminhos relativos para essas imagens.
+
+/js: contém main.js, responsável por iniciar a aplicação. Dentro de /js/modules, roteador.js controla as rotas; templates.js fornece os conteúdos das telas; menu.js gerencia a navegação responsiva; validacao.js reúne máscaras e verificadores; formulario.js controla os eventos e mensagens dos campos; armazenamento.js trata leitura, gravação e exclusão no localStorage; e feedback.js controla o toast e o modal.
+
+/testes: contém verificações automatizadas de validação, armazenamento e navegação. /capturas reúne imagens reais da interface, e /documentacao registra a arquitetura e os resultados das verificações.
+
+Na raiz ficam LEIA-ME.txt, package.json, iniciar.py e INICIAR-WINDOWS.bat. O servidor local permite carregar os módulos ES por HTTP; ele não recebe cadastros. Essa organização facilita localizar arquivos, testar funcionalidades e realizar manutenção sem concentrar todas as responsabilidades em um único código.
