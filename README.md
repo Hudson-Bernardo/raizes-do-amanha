@@ -199,14 +199,14 @@ O fluxo utiliza `main` para a base estável, `develop` para integração e branc
 As mensagens de implementação seguem o formato `tipo: descrição`, como:
 
 - `feat: gera cartões de projetos a partir de dados`
-- `docs: adiciona README com execução e testes` (mensagem sugerida para esta documentação)
+- `docs: adiciona README com execução e testes`
 - `fix: ...` para correções futuras.
 
 Antes de integrar uma alteração, revise os arquivos e registre os testes realizados no pull request. Issues podem acompanhar tarefas e uma milestone pode agrupar os objetivos da entrega.
 
-Para a preparação de uma versão, está previsto utilizar uma branch `release/`, concluir as verificações e integrar o resultado à `main` e à `develop`. Branches `hotfix/` serão utilizadas quando houver uma correção urgente em versão publicada.
+A versão `v1.0.0` foi preparada na branch `release/v1.0.0` e integrada à `main` pelo PR #7. Depois da publicação, a `develop` foi sincronizada com a `main`. Branches `hotfix/` ficam previstas para correções urgentes em versões publicadas.
 
-A primeira release está planejada como `v1.0.0`. As versões seguirão MAJOR.MINOR.PATCH: mudanças incompatíveis, funcionalidades compatíveis e correções compatíveis. Essa convenção é um planejamento; uma tag ou release deve ser criada somente quando a entrega correspondente estiver pronta.
+A primeira versão publicada está identificada pela tag anotada `v1.0.0`, enviada ao GitHub. As próximas versões seguem MAJOR.MINOR.PATCH: mudanças incompatíveis, funcionalidades compatíveis e correções compatíveis. A tag identifica o código entregue; uma página de Release no GitHub é um registro separado.
 
 ## Build e publicação
 
@@ -229,15 +229,19 @@ A execução gera `documentacao/BUILD-METRICAS.json`, com bytes antes/depois e p
 
 Para testar a build com as suítes de navegador existentes, sirva `dist` na porta **8000**, sem outro servidor nessa porta, e execute `node testes/navegador.cjs` e `node testes/contraste.cjs` em outro terminal com Playwright/Chromium disponíveis. Os testes usam dados fictícios e geram capturas. A instalação opcional de Playwright segue a seção Testes.
 
-Não há endereço público de produção configurado. A hospedagem permanece pendente. O relatório desta etapa está em `documentacao/BUILD.md`.
+O site está publicado no GitHub Pages: [Raízes do Amanhã](https://hudson-bernardo.github.io/raizes-do-amanha/html/index.html).
+
+O workflow `.github/workflows/pages.yml` instala as dependências com `npm ci`, executa os testes unitários e gera a build. Em execuções da `main`, publica a pasta `dist` após o sucesso do build. O primeiro deploy foi concluído com sucesso após o PR #7, e o acesso ao site foi confirmado. As suítes de navegador não fazem parte desse workflow.
+
+Detalhes em `documentacao/DEPLOY.md`; relatório de minificação em `documentacao/BUILD.md`.
 
 ## Próximas etapas
 
 - Revisar a acessibilidade e documentar resultados e limitações.
 - Consolidar a configuração reproduzível dos testes de navegador.
-- Avaliar otimização e preparar a hospedagem estática.
+- Avaliar novas otimizações de imagens e carregamento.
 - Revisar a documentação da entrega.
-- Criar a tag e a release correspondentes à versão publicada.
+- Manter as notas das próximas versões e os registros de validação atualizados.
 
 ## Créditos e contexto acadêmico
 
